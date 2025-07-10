@@ -1,0 +1,23 @@
+{
+  "name": "js-photo-editor",
+  "version": "1.0.0",
+  "description": "An application for editing photos built using vanilla JavaScript",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/player634/js-photo-editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/player634/js-photo-editor/issues"
+  },
+  "homepage": "https://github.com/player634/js-photo-editor#readme"
+}
