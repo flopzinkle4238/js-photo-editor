@@ -1,21 +1,24 @@
 const addImageButton = document.getElementById("add-image");
 const container = document.querySelector(".container");
 
+let imageCount = 0;
+
 addImageButton.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (file) {
     const img = new Image();
     img.src = URL.createObjectURL(file);
     img.onload = () => {
-      const myCanvas = createCanvas();
+      const myCanvas = createCanvas(`canvas-${imageCount++}`);
       drawImageOnCanvas(myCanvas, img);
       container.appendChild(myCanvas);
     };
   }
 });
 
-function createCanvas() {
+function createCanvas(id) {
   const canvas = document.createElement("canvas");
+  canvas.id = id;
   canvas.className = "vas";
   return canvas;
 }
