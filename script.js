@@ -1,9 +1,14 @@
-const addImageButton = document.getElementById("add-image");
+const addImageInput = document.getElementById("add-image-input");
+const addImageButton = document.getElementById("add-image-btn");
 const container = document.querySelector(".container");
 
 let imageCount = 0;
 
-addImageButton.addEventListener("change", (e) => {
+addImageButton.addEventListener("click", () => {
+  addImageInput.click();
+});
+
+addImageInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (file) {
     const img = new Image();
