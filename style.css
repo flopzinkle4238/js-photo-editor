@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #canvas {
   display: block;
   border: 2px solid black;
@@ -10,6 +16,7 @@
 
 .container {
   background-color: #2e2e2e58;
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 90vh;
+  width: 90vw;
+  overflow: scroll;
 }
