@@ -1,6 +1,7 @@
 const addImageInput = document.getElementById("add-image-input");
 const addImageButton = document.getElementById("add-image-btn");
 const container = document.querySelector(".container");
+const contentContainer = document.querySelector('.content-container')
 
 let imageCount = 0;
 
@@ -16,7 +17,7 @@ addImageInput.addEventListener("change", (e) => {
     img.onload = () => {
       const myCanvas = createCanvas(`canvas-${imageCount++}`);
       drawImageOnCanvas(myCanvas, img);
-      container.appendChild(myCanvas);
+      contentContainer.appendChild(myCanvas);
     };
   }
 });
