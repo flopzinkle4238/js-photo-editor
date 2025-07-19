@@ -29,7 +29,7 @@ addImageInput.addEventListener("change", (e) => {
 function createCanvas(id) {
   const canvas = document.createElement("canvas");
   canvas.id = id;
-  canvas.className = "vas";
+  canvas.className = "canvas-block";
   return canvas;
 }
 
@@ -41,7 +41,7 @@ function drawImageOnCanvas(myCanvas, img) {
 }
 
 function updateCanvasList() {
-  canvasList = document.querySelectorAll(".vas");
+  canvasList = document.querySelectorAll(".canvas-block");
 }
 
 function addEventOnCanvases() {
