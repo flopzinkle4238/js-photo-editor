@@ -34,9 +34,12 @@ body {
   border: 2px solid black;
 }
 
+.selectedCanvas {
+  border: 5px solid red;
+}
+
 .vas {
   display: block;
-  border: 2px solid black;
 }
 
 .container {

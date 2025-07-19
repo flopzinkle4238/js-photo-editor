@@ -1,9 +1,11 @@
 const addImageInput = document.getElementById("add-image-input");
 const addImageButton = document.getElementById("add-image-btn");
 const container = document.querySelector(".container");
-const contentContainer = document.querySelector('.content-container')
+const contentContainer = document.querySelector(".content-container");
 
 let imageCount = 0;
+let currentCanvas = null;
+let canvasList = document.querySelectorAll(".vas");
 
 addImageButton.addEventListener("click", () => {
   addImageInput.click();
@@ -18,6 +20,8 @@ addImageInput.addEventListener("change", (e) => {
       const myCanvas = createCanvas(`canvas-${imageCount++}`);
       drawImageOnCanvas(myCanvas, img);
       contentContainer.appendChild(myCanvas);
+      updateCanvasList();
+      addEventOnCanvases();
     };
   }
 });
@@ -34,4 +38,24 @@ function drawImageOnCanvas(myCanvas, img) {
   myCanvas.height = img.naturalHeight;
   myCanvas.width = img.naturalWidth;
   context.drawImage(img, 0, 0);
+}
+
+function updateCanvasList() {
+  canvasList = document.querySelectorAll(".vas");
+}
+
+function addEventOnCanvases() {
+  canvasList.forEach((c) => {
+    c.addEventListener("click", () => {
+      removeSelectedClasses();
+      c.classList.add("selectedCanvas");
+      currentCanvas = c;
+    });
+  });
+}
+
+function removeSelectedClasses() {
+  canvasList.forEach((c) => {
+    c.classList.remove("selectedCanvas");
+  });
 }
