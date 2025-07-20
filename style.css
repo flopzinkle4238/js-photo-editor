@@ -48,11 +48,10 @@ body {
   height: calc(100vh - 70px);
   overflow: scroll;
   scrollbar-width: 0;
-  padding: 20px;
 }
 
 .content-container {
-  width: 10000px;
-  height: 10000px;
+  min-width: 100%;
+  min-height: 100%;
   background-color: gray;
 }
