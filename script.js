@@ -58,3 +58,10 @@ function removeSelectedClasses() {
     c.classList.remove("selectedCanvas");
   });
 }
+
+container.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("canvas-block")) {
+    currentCanvas = null;
+    removeSelectedClasses();
+  }
+});
