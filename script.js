@@ -20,7 +20,6 @@ addImageInput.addEventListener("change", (e) => {
       drawImageOnCanvas(myCanvas, img);
       container.appendChild(myCanvas);
       updateCanvasList();
-      addEventOnCanvases();
     };
   }
 });
@@ -48,6 +47,9 @@ function updateCanvasList() {
 
     canvas.addEventListener("mousedown", (e) => {
       if (e.button !== 0) return; // Only left-click
+      removeSelectedClasses();
+      canvas.classList.add("selectedCanvas");
+      currentCanvas = canvas;
       isDragging = true;
       offsetX = e.clientX - canvas.offsetLeft;
       offsetY = e.clientY - canvas.offsetTop;
@@ -71,16 +73,6 @@ function updateCanvasList() {
     document.addEventListener("mouseup", () => {
       isDragging = false;
       canvas.style.cursor = "grab";
-    });
-  });
-}
-
-function addEventOnCanvases() {
-  canvasList.forEach((c) => {
-    c.addEventListener("click", () => {
-      removeSelectedClasses();
-      c.classList.add("selectedCanvas");
-      currentCanvas = c;
     });
   });
 }
