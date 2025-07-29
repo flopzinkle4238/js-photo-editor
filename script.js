@@ -57,8 +57,15 @@ function updateCanvasList() {
 
     document.addEventListener("mousemove", (e) => {
       if (!isDragging) return;
-      canvas.style.left = `${e.clientX - offsetX}px`;
-      canvas.style.top = `${e.clientY - offsetY}px`;
+
+      let newLeft = e.clientX - offsetX;
+      let newTop = e.clientY - offsetY;
+
+      newLeft = Math.max(0, newLeft);
+      newTop = Math.max(0, newTop);
+
+      canvas.style.left = `${newLeft}px`;
+      canvas.style.top = `${newTop}px`;
     });
 
     document.addEventListener("mouseup", () => {
