@@ -41,6 +41,31 @@ function drawImageOnCanvas(myCanvas, img) {
 
 function updateCanvasList() {
   canvasList = document.querySelectorAll(".canvas-block");
+
+  canvasList.forEach((canvas) => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    canvas.addEventListener("mousedown", (e) => {
+      if (e.button !== 0) return; // Only left-click
+      isDragging = true;
+      offsetX = e.clientX - canvas.offsetLeft;
+      offsetY = e.clientY - canvas.offsetTop;
+      canvas.style.cursor = "grabbing";
+      currentCanvas = canvas;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      canvas.style.left = `${e.clientX - offsetX}px`;
+      canvas.style.top = `${e.clientY - offsetY}px`;
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      canvas.style.cursor = "grab";
+    });
+  });
 }
 
 function addEventOnCanvases() {
