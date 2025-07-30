@@ -42,7 +42,6 @@ body {
 .canvas-block {
   display: block;
   position: absolute;
-  transition: border 0.5s;
 }
 
 .container {
