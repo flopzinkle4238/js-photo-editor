@@ -54,6 +54,7 @@ body {
   overflow: scroll;
   scrollbar-width: 0;
   position: relative;
+  margin-top: 70px;
 }
 
 .container::-webkit-scrollbar {
