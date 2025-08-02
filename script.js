@@ -89,3 +89,32 @@ container.addEventListener("click", (e) => {
     removeSelectedClasses();
   }
 });
+
+let scrollView = false;
+let scrollY;
+let scrollX;
+container.addEventListener("mousedown", (e) => {
+  if (e.button === 1) {
+    scrollView = true;
+    scrollX = e.clientX;
+    scrollY = e.clientY;
+  }
+});
+
+container.addEventListener("mouseup", (e) => {
+  scrollView = false;
+  scrollY = null;
+  scrollX = null;
+});
+
+container.addEventListener("mousemove", (e) => {
+  if (!scrollView) return;
+  let deltaX = e.clientX - scrollX;
+  let deltaY = e.clientY - scrollY;
+
+  container.scrollLeft -= deltaX;
+  container.scrollTop -= deltaY;
+
+  scrollX = e.clientX;
+  scrollY = e.clientY;
+});

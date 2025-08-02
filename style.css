@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -49,12 +55,14 @@ body {
 
 .container {
   background-color: #2e2e2e27;
-  width: 3000px;
-  height: 3000px;
+  width: 100vw;
+  height: 100vh;
   overflow: scroll;
   scrollbar-width: 0;
   position: relative;
-  margin-top: 70px;
+  margin: 10px;
+  margin-top: 80px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .container::-webkit-scrollbar {
