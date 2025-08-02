@@ -18,6 +18,9 @@ body {
   color: #fff;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
 }
 
 #add-image-input {
@@ -46,8 +49,8 @@ body {
 
 .container {
   background-color: #2e2e2e27;
-  width: 100vw;
-  height: calc(100vh - 70px);
+  width: 3000px;
+  height: 3000px;
   overflow: scroll;
   scrollbar-width: 0;
   position: relative;
